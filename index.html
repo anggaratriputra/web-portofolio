@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web Portofolio</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section>
+        <div class="header">
+            <div class="intro">
+                <p class="hello">Hello, I'm <b>Anggara.</b> <br />
+                    a Junior Web Developer. </p>
+
+                <div class="socialMedia">
+                    <img class="logoLinkedin" src="assets/linkedin.png" />
+                    <a href="https://www.linkedin.com/in/anggaratriputra">anggaratriputra</a>
+                    <img class="logoInstagram" src="assets/instagram.png" />
+                    <a href="https://www.instagram.com/anggaratriputra">anggaratriputra</a>
+                </div>
+            </div>
+            <div class="photo">
+                <img class="photoAnggara" src=/assets/photo.png </ img>
+            </div>
+            <div class="angleDown">
+                <i class='fas fa-angle-double-down fa-3x' style='color:#212121' id="changeLogo"
+                    onclick="showContent()"></i>
+            </div>
+        </div>
+        <div id="content1" style="display:none">
+            <div id="profile">
+                PROFILE
+            </div>
+            <div class="text-wrapper">
+                <div class="biodateContainer">
+                    <span id="biodate"> BIODATE </span><br />
+                    <p id="biodate2">
+                        <span>Fullname : Anggara Tri Putra</span>
+                        <span>DoB : August 11th, 1998. </span>
+                        <span>e-mail : anggaratriputra@gmail.com</span>
+                    </p>
+                </div>
+
+                <div class="photo2">
+                    <img class="photoAnggara2" src=/assets/photo3.png </ img>
+                </div>
+
+                <div class="aboutmeContainer">
+                    <span id="aboutme">ABOUT ME</span> <br />
+                    <p id="aboutme2">Graduate with a bachelor degree in Informatics Engineering, Eager to contribute
+                        to
+                        the digital world by continuing to learn new things. Currently studying Fullstack Web
+                        Development in Purwadhika Digital Technology School.</p>
+                </div>
+            </div>
+        </div>
+        <div id="content2" style="display:none">
+            <div>
+                <span id="edu">EDUCATION</span>
+                <ul id="eduList">
+                    <li>Purwadhika Digital Technology School<br />
+                        (2023 - present).</li>
+                    <br />
+                    <li>Gunadarma University<br />
+                        (2016 - 2020)</li>
+                </ul>
+            </div>
+        </div>
+        <div id="content3" style="display:none">
+            <div id="skill">
+                <span>SKILLS</span>
+            </div>
+            <div id="skillDesc">
+                <div>
+                    <img class="logo" src=/assets/html.png </ img>
+                </div>
+                <div>
+                    <img class="logo" src=/assets/css.png </ img>
+                </div>
+                <div>
+                    <img class="logo" src=/assets/javascript.png </ img>
+                </div>
+                <div>
+                    <img class="logo" src=/assets/reactjs.png </ img>
+                </div>
+                <div>
+                    <img class="logo" src=/assets/nodejs.png </ img>
+                </div>
+                <div>
+                    <img class="logo" src=/assets/photoshop.png </ img>
+                </div>
+
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+
+    <script>
+        let iconIndex = 0;
+
+        function showContent() {
+            const x = document.getElementById("content1");
+            const y = document.getElementById("content2");
+            const z = document.getElementById("content3");
+            const changeLogo = document.getElementById("changeLogo")
+            const icons = ['fa-angle-double-down fa-3x', 'fa-angle-double-up fa-3x'];
+
+            iconIndex = (iconIndex === 0) ? 1 : 0;
+            changeLogo.className = `fas ${icons[iconIndex]}`;
+
+            if (x.style.display === "none" && y.style.display === "none" && z.style.display === "none") {
+                x.style.display = "flex";
+                y.style.display = "flex";
+                z.style.display = "flex";
+
+                x.scrollIntoView({
+                    behavior: "smooth"
+                })
+            } else {
+                x.style.display = "none";
+                y.style.display = "none";
+                z.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
