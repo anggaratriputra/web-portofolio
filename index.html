@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
     <section>
-        <div class="header">
-            <div class="intro">
+        <div class="header animate__animated animate__backInDown" id="header">
+            <div class="intro" id="intro">
                 <p class="hello">Hello, I'm <b>Anggara.</b> <br />
                     a Junior Web Developer. </p>
 
@@ -28,7 +30,7 @@
                     <a href="https://www.instagram.com/anggaratriputra">anggaratriputra</a>
                 </div>
             </div>
-            <div class="photo">
+            <div class="photo" id="photo">
                 <img class="photoAnggara" src=assets/photo.png </ img>
             </div>
             <div class="angleDown">
@@ -36,6 +38,7 @@
                     onclick="showContent()"></i>
             </div>
         </div>
+
         <div id="content1" style="display:none">
             <div id="profile">
                 PROFILE
@@ -62,6 +65,7 @@
                         Development in Purwadhika Digital Technology School.</p>
                 </div>
             </div>
+        </div>
         </div>
         <div id="content2" style="display:none">
             <div>
@@ -101,15 +105,15 @@
 
             </div>
         </div>
-
-
         </div>
+
     </section>
 
     <script>
         let iconIndex = 0;
 
         function showContent() {
+            
             const x = document.getElementById("content1");
             const y = document.getElementById("content2");
             const z = document.getElementById("content3");
@@ -120,6 +124,7 @@
             changeLogo.className = `fas ${icons[iconIndex]}`;
 
             if (x.style.display === "none" && y.style.display === "none" && z.style.display === "none") {
+               
                 x.style.display = "flex";
                 y.style.display = "flex";
                 z.style.display = "flex";
@@ -128,13 +133,17 @@
                     behavior: "smooth"
                 })
             } else {
+               
                 x.style.display = "none";
                 y.style.display = "none";
                 z.style.display = "none";
             }
         }
     </script>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
